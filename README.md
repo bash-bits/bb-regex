@@ -1,13 +1,16 @@
 <h1 align="center">
 
 <img src="https://user-images.githubusercontent.com/6827931/226166354-a7cfea07-00c0-4167-bf0a-adf323d9d125.png" alt="Bash Bits Modular Bash Library" />
+<br />
+<img src="https://raw.githubusercontent.com/bash-bits/.github/master/.github/media/bash_logo-128x128.png" alt="Bourne Again Shell" />
 
 [BB-Regex v-1.0.0](https://github.com/bash-bits/bb-regex/releases/tag/v-1.0.0)
 
 </h1>
 
 <h3 align="center"><em>
-The Bash Bits Regex Module
+The Bash Bits Regex Module<br />
+Regular Expressions Library
 </em></h3>
 
 
@@ -17,6 +20,14 @@ The Bash Bits Regex Module
 <a href="https://bash-bits.github.io/bb-regex" target="_blank">Documentation</a>
 🔹
 <a href="https://github.com/bash-bits/bb-regex/releases" target="_blank">Releases</a>
+</h3>
+
+<h3 align="center">
+
+If you like this repo, please give it a ⭐ (it really does help)
+
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bash-bits/bb-import?style=social">
+
 </h3>
 
 <details>
@@ -38,19 +49,58 @@ The Bash Bits Regex Module
 
 ## ⭐ [Project Overview](#toc)
 
-The Bash Bits Regex Module - a library of VERY handy regular expressions.
+The Bash Bits Regex Module - a library of VERY handy regular expressions.  We all know regular expressions can sometimes be a bit of a handful - especially if you're not a very experienced coder.  So, whether you find them troublesome - or even if you just want to save some time - you can find a bunch of commonly-used expressions in this library, ready to go.
+
+### [Branch Reliability](#toc)
+
+The Branch Reliability Table is a way for you to determine how close to the bleeding edge you're comfortable getting.
+
+If you need stability, then download a branch marked with 🟢
+
+If you're contributing code to the project, you'll want 🔴
+
+| Branch               |    Stability    | Code Age         | Reliability |
+|----------------------|:---------------:|------------------|:-----------:|
+| `master`             |  latest stable  | latest release   |     🟢      |
+| `develop`            | latest unstable | most recent code |     🔴      |
 
 [`^ Top`](#toc)
 
 ## ❓ [What's Included?](#toc)
 
-
+<details><summary>✅ bb-regex.d</summary>
+<ul>
+    <li>✅ cc</li>
+    <li>✅ date</li>
+    <li>✅ docker</li>
+    <li>✅ general</li>
+    <li>✅ network</li>
+    <li>✅ numeric</li>
+    <li>✅ options</li>
+    <li>✅ response</li>
+</ul>
+</details>
+<ul>
+<li>✅ bb-regex.sh</li>
+</ul>
 
 [`^ Top`](#toc)
 
 ## 📂 [Installation](#toc)
 
+Like ALL other Bash-Bits Modules, `BB-Regex` is "imported" using the [BB-Import Module](https://github.com/bash-bits/bb-import).  If you haven't yet installed `BB-Import`, perhaps you'd like to do so now?  It's as easy as running the following command in your terminal:
 
+```shell
+bash <(curl -sfLS https://raw.githubusercontent.com/bash-bits/bb-import/master/install.sh)
+```
+
+Once you've installed `BB-Import`, you can include `BB-Regex` in ANY of your Bash projects by including the following code snippet at the top of each file:
+
+```shell
+#!/usr/bin/env bb-import
+
+bb::import bb-regex
+```
 
 [`^ Top`](#toc)
 
@@ -160,32 +210,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [`^ Top`](#toc)
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/6827931/226142057-e0866834-aeee-41f2-8437-5db3d57fe794.png" alt="Star - Useful">
-</p>
-
 <h3 align="center">
 
-⭐ Star This Repo
+If you like this repo, please give it a ⭐ (it really does help)
 
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bash-bits/bb-regex?style=social">
-
-<br /><br />
-
-<a name="support-this-project" href="#toc">!! SUPPORT THIS PROJECT !!</a>
-
-<a href="https://github.com/sponsors/ragdata" target="_blank"><img src="https://img.shields.io/badge/support_this_project-gray?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white?style=for-the-badge" alt="Support This Project"></a>
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bash-bits/bb-import?style=social">
 
 </h3>
-
-<br />
-If this project is worth something to you, and you're in a position to be able to help out financially, it would <strong>really</strong> take the pressure off here and allow me to keep working and keep it all freely available!
-
-It doesn't have to be a lot, but you will magnify your contribution if you're able to give a little every month.  If you're not in a position to do that, but think you could make a small, one-time donation to the kitty - you'd be AMAZED how I can make a little go a LONG way!
-
-EVERY financial supporter gets their name associated with the project.
-
-Find out more on my [**Sponsor's Page**][sponsors]
 
 [`^ Top`](#toc)
 
