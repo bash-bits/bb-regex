@@ -95,7 +95,13 @@ else
 	do
 		case "$1" in
 			-v|--version)
-				[[ -n "${2}" ]] && { regex::version "${2}"; shift 2; } || { regex::version; shift; }
+				if [[ -n "${2}" ]]; then
+					regex::version "${2}"
+					shift 2
+				else
+					regex::version
+					shift
+				fi
 				exitReturn 0
 				;;
 			--)
