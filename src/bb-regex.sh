@@ -15,6 +15,15 @@
 # ==================================================================
 bb-import bb-functions/is
 # ==================================================================
+# VARIABLES
+# ==================================================================
+#
+# BUILD VARIABLES
+#
+declare -gx REGEX_BUILD="x"
+declare -gx REGEX_VERSION="v-1.0.0"
+declare -gx REGEX_BUILD_DATE="20230718-0033"
+# ==================================================================
 # FUNCTIONS
 # ==================================================================
 # ------------------------------------------------------------------
@@ -45,10 +54,58 @@ regex::load()
         bb::import "bb-regex/$file"
     done
 }
+# ------------------------------------------------------------------
+# regex::version
+# ------------------------------------------------------------------
+# @description Reports the version and build date of this release
+#
+# @noargs
+#
+# @stdout Version, Copyright, & Build Information
+# ------------------------------------------------------------------
+regex::version()
+{
+	local verbosity="${1:-}"
+
+	if [[ -z "$verbosity" ]]; then
+		echo "${REGEX_VERSION}"
+	else
+		echo
+		echo "Bash-Bits Modular Bash Library"
+		echoWhite "BB-REGEX Module ${REGEX_VERSION}"
+		echo "Copyright © 2022-2023 Darren (Ragdata) Poulton"
+		echo "Build: ${REGEX_BUILD}"
+		echo "Build Date: ${REGEX_BUILD_DATE}"
+		echo
+	fi
+}
 # ==================================================================
 # MAIN
 # ==================================================================
 # IF SOURCED, RUN LOAD FUNCTION
 if [[ $(is::sourced) ]]; then
 	regex::load "$@" || return $?
+else
+	trap 'bb::errorHandler "LINENO" "BASH_LINENO" "${BASH_COMMAND}" "${?}"' ERR
+	options=$(getopt -l "version::" -o "v::" -a -- "$@")
+
+	evalset --"$options"
+
+	while true
+	do
+		case "$1" in
+			-v|--version)
+				[[ -n "${2}" ]] && { regex::version "${2}"; shift 2; } || { regex::version; shift; }
+				exitReturn 0
+				;;
+			--)
+				shift
+				break
+				;;
+			*)
+				echoError "Invalid Argument!"
+				exitReturn 2
+				;;
+		esac
+	done
 fi
