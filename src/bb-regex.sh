@@ -47,12 +47,12 @@ regex::load()
         do
             args+=("${file##*/}")
         done
+    else
+        for file in "${args[@]}"
+        do
+            bb::import "bb-regex/$file"
+        done
     fi
-
-    for file in "${args[@]}"
-    do
-        bb::import "bb-regex/$file"
-    done
 }
 # ------------------------------------------------------------------
 # regex::version
@@ -87,9 +87,10 @@ if [[ $(is::sourced) ]]; then
 	regex::load "$@" || return $?
 else
 	trap 'bb::errorHandler "LINENO" "BASH_LINENO" "${BASH_COMMAND}" "${?}"' ERR
+
 	options=$(getopt -l "version::" -o "v::" -a -- "$@")
 
-	evalset --"$options"
+	eval set --"$options"
 
 	while true
 	do
