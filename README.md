@@ -26,7 +26,7 @@ The Bash-Bits Regex Module<br /><br />
 <div align="center">
 
 ![Check Status](https://img.shields.io/github/checks-status/bash-bits/bb-regex/master?logo=github&style=for-the-badge)
-![Open Bug Issues](https://img.shields.io/github/issues/bash-bits/bb-regex/bug?logo=github&style=for-the-badge)
+![Open Issues](https://img.shields.io/github/issues-raw/bash-bits/bb-regex?logo=github&style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/bash-bits/bb-regex/master?logo=github&style=for-the-badge)
 ![Code Size](https://img.shields.io/github/repo-size/bash-bits/bb-regex?logo=github&style=for-the-badge)
 ![MIT](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)
