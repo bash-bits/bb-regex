@@ -17,12 +17,6 @@ bb-import bb-functions/is
 # ==================================================================
 # VARIABLES
 # ==================================================================
-#
-# BUILD VARIABLES
-#
-declare -gx REGEX_BUILD="x"
-declare -gx REGEX_VERSION="v-1.0.0"
-declare -gx REGEX_BUILD_DATE="20230718-0033"
 # ==================================================================
 # FUNCTIONS
 # ==================================================================
@@ -68,14 +62,14 @@ regex::version()
 	local verbosity="${1:-}"
 
 	if [[ -z "$verbosity" ]]; then
-		echo "${REGEX_VERSION}"
+		echo "${PKG_VERSION}"
 	else
 		echo
 		echo "Bash-Bits Modular Bash Library"
-		echoWhite "BB-REGEX Module ${REGEX_VERSION}"
+		echoWhite "BB-PKG Module ${PKG_VERSION}"
 		echo "Copyright © 2022-2023 Darren (Ragdata) Poulton"
-		echo "Build: ${REGEX_BUILD}"
-		echo "Build Date: ${REGEX_BUILD_DATE}"
+		echo "Build: ${PKG_BUILD}"
+		echo "Build Date: ${PKG_BUILD_DATE}"
 		echo
 	fi
 }
