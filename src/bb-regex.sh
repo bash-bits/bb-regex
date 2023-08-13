@@ -68,14 +68,14 @@ regex::version()
 	local verbosity="${1:-}"
 
 	if [[ -z "$verbosity" ]]; then
-		echo "${REGEX_VERSION}"
+		echo "${PKG_VERSION}"
 	else
 		echo
 		echo "Bash-Bits Modular Bash Library"
-		echoWhite "BB-REGEX Module ${REGEX_VERSION}"
+		echoWhite "BB-PKG Module ${PKG_VERSION}"
 		echo "Copyright © 2022-2023 Darren (Ragdata) Poulton"
-		echo "Build: ${REGEX_BUILD}"
-		echo "Build Date: ${REGEX_BUILD_DATE}"
+		echo "Build: ${PKG_BUILD}"
+		echo "Build Date: ${PKG_BUILD_DATE}"
 		echo
 	fi
 }
